@@ -23,7 +23,7 @@ get_nodes_url="%s/Node/get?key=%s&ver=%s&arch=%s&i_count=%s" % (url_base,api,ver
 dat=urllib.urlopen(get_nodes_url).read()
 b=json.loads(dat)
 for h in b['hosts']:
-  cmd="ssh  root@%s 'yum -y install git && git clone %s tests && cd tests && bash -x ./run_tests'" % (h, git_url)
+  cmd="ssh  root@%s 'yum -y install git && git clone %s tests && cd tests && chmod +x ./run_tests && ./run_tests'" % (h, git_url)
   print cmd
   rtn_code=subprocess.call(cmd, shell=True)
   
