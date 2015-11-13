@@ -18,7 +18,7 @@ arch="x86_64"
 count=1
 git_url="https://example.com/test.git"
 
-get_nodes_url="%s/Node/get?key=%s&ver=%s&arch=%s&i_count=%s" % (url_base,api,ver,arch,count)
+get_nodes_url="%s/Node/get?key=%s&ver=%s&arch=%s&count=%s" % (url_base,api,ver,arch,count)
 
 dat=urllib.urlopen(get_nodes_url).read()
 b=json.loads(dat)
