@@ -12,7 +12,10 @@
 import json, urllib, subprocess, sys
 
 url_base="http://admin.ci.centos.org:8080"
-api="ADD YOUR API KEY HERE"
+
+# This file was generated on your slave.  See https://wiki.centos.org/QaWiki/CI/GettingStarted
+api=open('duffy.key').read().strip()
+
 ver="7"
 arch="x86_64"
 count=1
