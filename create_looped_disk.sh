@@ -14,7 +14,7 @@ fname=/var/$(mktemp -u)
 if [ ! -e /usr/bin/qemu-img ]; then
   yum -y -d0 install qemu-img
 fi
-qemu-img create -q -f raw $fname ${size}G
+qemu-img create -f raw $fname ${size}G
 if [ $? -ne 0 ]; then 
   echo 'failed to create host file'
   exit 1
